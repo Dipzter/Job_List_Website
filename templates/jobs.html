@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tracked Jobs</title>
+    </head>
+    <body>
+        <h2>Tracked Jobs</h2>
+
+        {% if jobs %}
+            <ul>
+                {% for job in jobs %}
+                    <li><strong>{{ job.company }}</strong> - {{ job.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No jobs added yet.</p>
+        {% endif %}
+
+        <br>
+        <a href = "/add_job">Add another job</a>
+    </body>
+</html>

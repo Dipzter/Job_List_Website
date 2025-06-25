@@ -23,11 +23,7 @@ def add_job():
 def list_jobs():
     # If jobs is empty, return "No jobs yet."
     # Otherwise, loop through and return jobs formatted with <br>
-    if not jobs:
-        return "No jobs added or program run yet"
-    else:
-        job_list = "<br>".join(f"{j["company"]} - {j["title"]}" for j in jobs)
-        return f"<h2>Tracked Jobs</h2>{job_list}"
+    return render_template("jobs.html", jobs = jobs)
 
 if __name__ == "__main__":
     app.run(debug = True)
