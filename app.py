@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import request
+from flask import Flask, request, render_template, redirect
 
 jobs = []
 
@@ -11,10 +10,6 @@ def home():
 
 @app.route("/add_job")
 def add_job():
-    # Get 'company' and 'title' from request.args
-    # If both exist, append them as a dict to the 'jobs' list
-    # Return a confirmation message
-    # Else, return a "Missing data" error message
     company = request.args.get("company")
     title = request.args.get("title")
     if company and title:
